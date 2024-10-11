@@ -25,7 +25,7 @@ To train a KNN and check its performance on correctness forecasting, simply do:
 python knn.py
 ```
 
-To run our Matrix Factorization model and see its performance, simply do:
+To train our Matrix Factorization model and see its performance, simply do:
 ```sh
 python mf.py
 ```
