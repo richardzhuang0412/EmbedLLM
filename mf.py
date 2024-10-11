@@ -157,7 +157,7 @@ if __name__ == "__main__":
     parser.add_argument("--test_data_path", type=str, default="data/test.csv")
     parser.add_argument("--question_embedding_path", type=str, default="data/question_embeddings.pth")
     parser.add_argument("--embedding_save_path", type=str, default="data/model_embeddings.pth")
-    parser.add_argument("--model_save_path", type=str, default=None)
+    parser.add_argument("--model_save_path", type=str, default="data/saved_model.pth")
     parser.add_argument("--model_load_path", type=str, default=None)
     args = parser.parse_args()
 

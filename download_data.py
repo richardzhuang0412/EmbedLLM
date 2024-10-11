@@ -1,3 +1,4 @@
+import os
 from huggingface_hub import hf_hub_download
 
 # Hugging Face dataset repository details
@@ -6,6 +7,7 @@ files = ["train_x.pth", "train_y.pth", "test_x.pth", "test_y.pth", "val_x.pth", 
          "train.csv", "test.csv", "val.csv", "model_order.csv", "question_order.csv", "question_embeddings.pth"] 
 
 output_dir = "./data/"
+os.makedirs(output_dir, exist_ok=True)
 
 for file in files:
     print(f"Downloading {file}...")
