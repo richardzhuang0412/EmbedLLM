@@ -13,6 +13,8 @@ By [Richard Zhuang](https://richardzhuang0412.github.io/),
 [Jiantao Jiao](https://people.eecs.berkeley.edu/~jiantao),
 and [Kannan Ramchandran](https://people.eecs.berkeley.edu/~kannanr/)
 
+Dataset Link: https://huggingface.co/datasets/RZ412/EmbedLLM
+
 ## Usage
 
 Run the following to download the correctness data we used to train our model:
