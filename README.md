@@ -1,8 +1,8 @@
-# EmbedLLM: Learning Compact Representations of Large Language Models (ICLR 2025 Spotlight)
+# README
 
 This repository contains the official implementation of our [paper](https://arxiv.org/abs/2410.02223): 
 
-**EmbedLLM: Learning Compact Representations of Large Language Models**
+**EmbedLLM: Learning Compact Representations of Large Language Models (ICLR 2025 Spotlight)**
 
 By [Richard Zhuang](https://richardzhuang0412.github.io/), 
 [Tianhao Wu](https://thwu1.github.io/tianhaowu/),
