@@ -1,8 +1,6 @@
-# README
+# EmbedLLM: Learning Compact Representations of Large Language Models
 
-(Repo Under Construction!)
-
-This repo contains the code for the experiments in our [paper](https://arxiv.org/abs/2410.02223): 
+This repository contains the official implementation of our [paper](https://arxiv.org/abs/2410.02223): 
 
 **EmbedLLM: Learning Compact Representations of Large Language Models**
 
@@ -13,23 +11,81 @@ By [Richard Zhuang](https://richardzhuang0412.github.io/),
 [Jiantao Jiao](https://people.eecs.berkeley.edu/~jiantao),
 and [Kannan Ramchandran](https://people.eecs.berkeley.edu/~kannanr/)
 
-Dataset Link: https://huggingface.co/datasets/RZ412/EmbedLLM
+## Installation
 
-## Usage
+1. Clone this repository:
+```bash
+git clone https://github.com/yourusername/EmbedLLM.git
+cd EmbedLLM
+```
 
-Run the following to download the correctness data we used to train our model:
-```sh
+2. Create and activate the conda environment: 
+(Remember to change the prefix path in the environment.yml file to the path of your conda environment)
+```bash
+conda env create -f environment.yml
+conda activate embedllm
+```
+
+## Dataset
+
+The dataset used in our experiments is available on HuggingFace:
+https://huggingface.co/datasets/RZ412/EmbedLLM
+
+We prepare a script to download some of the correctness data we used to train our model:
+```bash
+cd data_preprocessing
 python download_data.py
 ```
 
-To train a KNN and check its performance on correctness forecasting, simply do:
-```sh
+For full dataset (including training set with various sizes and trained model embeddings), please refer to the above HuggingFace page.
+
+To transform the benchmark questions into embeddings:
+```bash
+cd data_preprocessing
+python get_question_embedding_tensor.py
+```
+
+## Usage
+
+### KNN Model
+
+To train a KNN model and evaluate its performance on correctness forecasting:
+```bash
+cd algorithm
 python knn.py
 ```
 
-To train our Matrix Factorization model and see its performance, simply do:
-```sh
+Key arguments:
+- `--input-format`: Choose between 'tensor' or 'csv' input format (default: 'csv')
+- `--num-neighbors`: Number of neighbors for KNN (default: 131)
+- `--save-tensors`: Save processed CSV data as tensors for faster future loading
+
+### Matrix Factorization Model
+
+To train our Matrix Factorization model and evaluate its performance:
+```bash
+cd algorithm
 python mf.py
 ```
 
-For customized configuration, please see the argparse section in the code. 
+Key arguments:
+- `--embedding-dim`: Dimension of model embeddings (default: 232)
+- `--alpha`: Noise level for regularization (default: 0.05)
+- `--batch-size`: Training batch size (default: 2048)
+- `--num-epochs`: Number of training epochs (default: 50)
+- `--eval-mode`: Evaluation mode - 'correctness' or 'router' (default: 'correctness')
+
+## Citation
+
+If you find this code useful for your research, please cite our paper:
+
+```bibtex
+@inproceedings{
+zhuang2025embedllm,
+title={Embed{LLM}: Learning Compact Representations of Large Language Models},
+author={Richard Zhuang and Tianhao Wu and Zhaojin Wen and Andrew Li and Jiantao Jiao and Kannan Ramchandran},
+booktitle={The Thirteenth International Conference on Learning Representations},
+year={2025},
+url={https://openreview.net/forum?id=Fs9EabmQrJ}
+}
+```
