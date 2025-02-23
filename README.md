@@ -1,8 +1,7 @@
 # EmbedLLM: Learning Compact Representations of Large Language Models
-
 This repository contains the official implementation of our [paper](https://arxiv.org/abs/2410.02223): 
 
-**EmbedLLM: Learning Compact Representations of Large Language Models**
+**EmbedLLM: Learning Compact Representations of Large Language Models (ICLR 2025 Spotlight)**
 
 By [Richard Zhuang](https://richardzhuang0412.github.io/), 
 [Tianhao Wu](https://thwu1.github.io/tianhaowu/),
@@ -10,6 +9,11 @@ By [Richard Zhuang](https://richardzhuang0412.github.io/),
 [Andrew Li](https://www.linkedin.com/in/andrewli2403/),
 [Jiantao Jiao](https://people.eecs.berkeley.edu/~jiantao),
 and [Kannan Ramchandran](https://people.eecs.berkeley.edu/~kannanr/)
+
+<div align="center">
+  <img src="assets/embedllm_diagram.jpg" width="800px">
+  <p><em>An illustration of the EmbedLLM pipeline. An embedder network is pretrained from sample question-answer pairs from a pool of LLMs to map them into vector embeddings. Downstream applications like model routing are adapted by training an additional linear layer on top of these embeddings.</em></p>
+</div>
 
 ## Installation
 
