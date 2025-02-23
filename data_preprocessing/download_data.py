@@ -3,10 +3,9 @@ from huggingface_hub import hf_hub_download
 
 # Hugging Face dataset repository details
 repo_id = "RZ412/EmbedLLM"
-files = ["train_x.pth", "train_y.pth", "test_x.pth", "test_y.pth", "val_x.pth", "val_y.pth", 
-         "train.csv", "test.csv", "val.csv", "model_order.csv", "question_order.csv", "question_embeddings.pth"] 
+files = ["train.csv", "test.csv", "val.csv", "model_order.csv", "question_order.csv"] 
 
-output_dir = "./data/"
+output_dir = "../data/"
 os.makedirs(output_dir, exist_ok=True)
 
 for file in files:
