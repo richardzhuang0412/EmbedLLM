@@ -111,8 +111,8 @@ if __name__ == "__main__":
         train_x, train_y, test_x, test_y = load_csv_data(args.train_csv_path, args.test_csv_path)
         if args.save_tensors:
             print("Saving tensors...")
-            save_tensor_data(train_x, train_y, args.save_train_x, args.save_train_y)
-            save_tensor_data(test_x, test_y, args.save_test_x, args.save_test_y)
+            save_tensor_data(train_x, train_y, args.save_train_x_path, args.save_train_y_path)
+            save_tensor_data(test_x, test_y, args.save_test_x_path, args.save_test_y_path)
     print("Finish Initializing Dataset")
     
     evaluate(train_x, train_y, test_x, test_y, args.num_neighbors)
